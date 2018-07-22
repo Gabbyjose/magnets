@@ -1,16 +1,18 @@
 body {
-  background-color: silver;
+  background-color: #E3E3e3;
 }
 
 h1 {
-  padding: 1px;
+  padding: 5px;
   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-  align-content: center;
+  text-align: center;
+  margin: 5px;
 }
 
 label {
-  padding: 1px;
+  padding: 5px;
   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  margin: 5px;
 }
 
 input {
@@ -37,7 +39,8 @@ input:focus {
   margin: 2em;
   height: 1000px;
   border: 1px solid black;
-  border-radius: 25px
+  border-radius: 25px;
+  background-color: silver;
 }
 
 p {
@@ -48,7 +51,12 @@ p {
 
 button {
   background-color: transparent;
-  padding: .5em 1em;
+  padding: 1em 1em;
+  margin: 5px;
   border: 1px solid white;
   border-radius: 10px;
+}
+
+#shuffle {
+  float: right;
 }

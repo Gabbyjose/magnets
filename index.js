@@ -4,7 +4,7 @@ const container = document.getElementById("container")
 let {width, height, left} = container.getBoundingClientRect()
 let i = (width / 100) + left;
 let j = 175
-let increments = 20
+let increments = 30
 
 
 function makeDraggable(node){
