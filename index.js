@@ -14,10 +14,6 @@ function makeDraggable(node){
 
   node.onmousedown = function(event) {
     event.preventDefault()
-    let dragging = false
-    if(!dragging){
-      console.log(dragging)
-      dragging = true
       let shiftX = event.clientX - node.getBoundingClientRect().left;
       let shiftY = event.clientY - node.getBoundingClientRect().top;
       node.style.position = 'absolute';
@@ -27,8 +23,9 @@ function makeDraggable(node){
       moveAt(event.pageX, event.pageY);
 
       function moveAt(pageX, pageY) {
-        node.style.left = pageX - shiftX + 'px';
-        node.style.top = pageY - shiftY + 'px';
+        let {top, bottom, left, right } = container.getBoundingClientRect()
+        if(pageX > left && pageX < right) node.style.left = pageX - shiftX + 'px';
+        if(pageY < bottom && pageY > top) node.style.top = pageY - shiftY + 'px';
       }
 
       function onMouseMove(event) {
@@ -45,15 +42,14 @@ function makeDraggable(node){
         document.removeEventListener('mousemove', onMouseMove);
         container.onmouseup = null;
       };
-    }
-    else {
-      console.log('test')
-        node.style.left = event.clientX
-        node.style.right = event.clientY
-        document.removeEventListener('mousemove', onMouseMove);
-        container.onmouseup = null;
-        dragging = false;
-    }
+
+      // console.log('test')
+      //   node.style.left = event.clientX
+      //   node.style.right = event.clientY
+      //   document.removeEventListener('mousemove', onMouseMove);
+      //   container.onmouseup = null;
+      //   dragging = false;
+
   }
 }
 
